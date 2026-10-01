@@ -1,12 +1,17 @@
 {
-  "name": "talktrack-workspace",
-  "description": "Workspace root for talktrack. Never published: it exists to hold the workspace, the task pipeline, the shared tooling configuration, and the release orchestration.",
+  "name": "talktrack",
+  "description": "Narrated, cursor-driven demo recordings from Playwright: a synthetic human-feeling cursor, caption bands timed to real page events, and ffmpeg-framed output, usable inside @playwright/test specs or from standalone scripts.",
+  "version": "0.1.0",
+  "bugs": {
+    "url": "https://github.com/ExaDev/talktrack/issues"
+  },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
     "@eslint/js": "^10.0.1",
     "@exadev/eslint-config": "2.27.0",
-    "@exadev/semantic-release-workspace": "3.1.17",
+    "@playwright/test": "^1.63.0",
     "@semantic-release/changelog": "^7.0.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/git": "^11.0.1",
@@ -22,32 +27,78 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.4.1",
     "prettier": "^3.9.6",
+    "publint": "^0.3.24",
     "semantic-release": "^25.0.9",
+    "tsdown": "^0.23.0",
     "turbo": "^2.10.12",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.68.0"
+    "typescript-eslint": "^8.68.0",
+    "vitest": "^4.1.11"
   },
   "engines": {
     "node": ">=20"
   },
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./dist/index.d.ts",
+        "require": "./dist/index.d.cts"
+      },
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/ExaDev/talktrack#readme",
+  "keywords": [
+    "automation",
+    "captions",
+    "demo",
+    "e2e",
+    "narration",
+    "playwright",
+    "recording",
+    "video"
+  ],
   "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c",
-  "private": true,
+  "peerDependencies": {
+    "@playwright/test": ">=1.55"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true,
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ExaDev/talktrack.git"
   },
   "scripts": {
+    "_build": "tsdown",
     "_lint": "eslint . --cache --max-warnings 0",
+    "_prepush": "true",
+    "_test": "vitest run",
+    "_test:e2e": "playwright test",
     "_typecheck": "tsc -p tsconfig.json",
+    "_typecheck:attw": "attw --pack",
     "build": "turbo run _build",
     "lint": "turbo run _lint",
+    "lint:fix": "eslint . --fix",
     "prepare": "husky",
+    "prepublishOnly": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build && publint && attw --pack",
     "prepush": "turbo run _prepush",
-    "release": "semantic-release-workspace release --config release-workspace.config.ts",
+    "release": "semantic-release",
     "test": "turbo run _test",
     "test:e2e": "turbo run _test:e2e",
     "typecheck": "turbo run _typecheck _typecheck:attw"
   },
-  "type": "module"
+  "sideEffects": false,
+  "type": "module",
+  "types": "./dist/index.d.ts"
 }

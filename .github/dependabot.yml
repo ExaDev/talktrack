@@ -2,10 +2,7 @@ version: 2
 
 updates:
   - package-ecosystem: "npm"
-    # `directories` (plural, glob-capable) covers the workspace root's own manifest plus every package's, in one entry rather than one per manifest: a `directory: "/"` entry alone would leave every dependency declared inside packages/* unwatched.
-    directories:
-      - "/"
-      - "/packages/*"
+    directory: "/"
     schedule:
       interval: "daily"
     cooldown:

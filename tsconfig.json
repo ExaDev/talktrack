@@ -1,9 +1,19 @@
 {
   "compilerOptions": {
-    "lib": ["ES2023"],
+    "exactOptionalPropertyTypes": true,
+    "forceConsistentCasingInFileNames": true,
+    // DOM is on the lib list because src/cursor.ts embeds a real browser function (the cursor overlay) that page.evaluate runs inside the recorded page; the rest of the package is Node.
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    // Bundler resolution (no .js extensions on relative imports) because the published artifact is bundled by tsdown, not emitted by tsc.
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2023",
     "types": ["node"]
   },
-  "extends": "./tsconfig.base.json",
-  // The workspace root's own tooling configs, which are Node programs rather than library source: ESLint's, Prettier's, commitlint's, lint-staged's, and the release orchestrator's. packages/talktrack keeps its own tsconfig and is not part of this program.
-  "include": ["*.config.ts"]
+  // One program covers source, tests and tooling configs alike: the e2e specs import both src and @playwright/test, the unit tests import src, and type-aware ESLint needs every linted file inside exactly one project.
+  "include": ["src", "test", "*.config.ts"]
 }

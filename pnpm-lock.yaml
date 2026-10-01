@@ -169,6 +169,9 @@ importers:
 
   .:
     devDependencies:
+      '@arethetypeswrong/cli':
+        specifier: ^0.18.5
+        version: 0.18.5
       '@commitlint/cli':
         specifier: ^21.2.2
         version: 21.2.3(@types/node@26.6.3)(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)(typescript@6.0.3)
@@ -181,9 +184,9 @@ importers:
       '@exadev/eslint-config':
         specifier: 2.27.0
         version: 2.27.0(@eslint/json@2.1.0)(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript-eslint@8.71.0(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(typescript@6.0.3)
-      '@exadev/semantic-release-workspace':
-        specifier: 3.1.17
-        version: 3.1.17(@semantic-release/changelog@7.0.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3)))(@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(@semantic-release/git@11.0.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(@semantic-release/github@12.0.10(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(@semantic-release/npm@13.2.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3)))(@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)(typescript@6.0.3)
+      '@playwright/test':
+        specifier: ^1.63.0
+        version: 1.63.0
       '@semantic-release/changelog':
         specifier: ^7.0.0
         version: 7.0.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))
@@ -229,54 +232,12 @@ importers:
       prettier:
         specifier: ^3.9.6
         version: 3.9.9
-      semantic-release:
-        specifier: ^25.0.9
-        version: 25.0.9(supports-color@7.2.0)(typescript@6.0.3)
-      turbo:
-        specifier: ^2.10.12
-        version: 2.11.5
-      typescript:
-        specifier: ^6.0.3
-        version: 6.0.3
-      typescript-eslint:
-        specifier: ^8.68.0
-        version: 8.71.0(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
-
-  packages/talktrack:
-    devDependencies:
-      '@arethetypeswrong/cli':
-        specifier: ^0.18.5
-        version: 0.18.5
-      '@eslint/js':
-        specifier: ^10.0.1
-        version: 10.0.1(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))
-      '@exadev/eslint-config':
-        specifier: 2.27.0
-        version: 2.27.0(@eslint/json@2.1.0)(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript-eslint@8.71.0(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(typescript@6.0.3)
-      '@playwright/test':
-        specifier: ^1.63.0
-        version: 1.63.0
-      '@types/node':
-        specifier: ^26.4.0
-        version: 26.6.3
-      eslint:
-        specifier: ^10.9.1
-        version: 10.11.0(jiti@2.7.0)(supports-color@7.2.0)
-      eslint-config-prettier:
-        specifier: ^10.1.8
-        version: 10.1.8(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))
-      eslint-plugin-prettier:
-        specifier: ^5.5.6
-        version: 5.5.6(eslint-config-prettier@10.1.8(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0)))(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(prettier@3.9.9)
-      globals:
-        specifier: ^17.11.0
-        version: 17.12.0
-      prettier:
-        specifier: ^3.9.6
-        version: 3.9.9
       publint:
         specifier: ^0.3.24
         version: 0.3.24
+      semantic-release:
+        specifier: ^25.0.9
+        version: 25.0.9(supports-color@7.2.0)(typescript@6.0.3)
       tsdown:
         specifier: ^0.23.0
         version: 0.23.0(@arethetypeswrong/core@0.18.5)(publint@0.3.24)(typescript@6.0.3)
@@ -505,23 +466,6 @@ packages:
         optional: true
       eslint-plugin-turbo:
         optional: true
-
-  '@exadev/release-gate@1.0.1':
-    resolution: {integrity: sha512-VKU6qZlvl6C+xOLC12mYvv1ygcLm4Gt28rcd2K20fMJB4jz/2IeK5Nn+Ivk4a4xv7TmzvoJCmHUfo7nmwnrVYw==}
-    engines: {node: '>=20'}
-
-  '@exadev/semantic-release-workspace@3.1.17':
-    resolution: {integrity: sha512-Dl5N0YVZW7HPr6sh2TLjofgD+gfg5chI5Fx+gt8uEgCgoXwO5ARCl6cW0RbWLrHvuD5XiONNjxi2T8y0JjwkOA==}
-    engines: {node: ^22.18 || >=24}
-    hasBin: true
-    peerDependencies:
-      '@semantic-release/changelog': ^7.0.0
-      '@semantic-release/commit-analyzer': ^13.0.1
-      '@semantic-release/git': ^11.0.1
-      '@semantic-release/github': ^12.0.9
-      '@semantic-release/npm': ^13.1.5
-      '@semantic-release/release-notes-generator': ^14.1.1
-      semantic-release: ^25.0.9
 
   '@humanfs/core@0.19.2':
     resolution: {integrity: sha512-UhXNm+CFMWcbChXywFwkmhqjs3PRCmcSa/hfBgLIb7oQ5HNb1wS0icWsGtSAUNgefHeI+eBrA8I1fxmbHsGdvA==}
@@ -1337,10 +1281,6 @@ packages:
     resolution: {integrity: sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==}
     engines: {node: '>=14'}
 
-  commander@15.0.0:
-    resolution: {integrity: sha512-z67u4ZhzCL/Tydu1lJARtEZYWbWaN7oYLHbsuzocr6y4N6WZAagG3RQ4FW61V1/0+jImpj293XfrcYnd1qxtPg==}
-    engines: {node: '>=22.12.0'}
-
   comment-parser@1.4.8:
     resolution: {integrity: sha512-rKZTGo4fzKYna8UcL0isTg5wkBNla7bxTypLwZQXjIdi++IdP1OJ41rI5Mti3/jltkPujbu4i9LIARYA+zpotQ==}
     engines: {node: '>= 12.0.0'}
@@ -1412,10 +1352,6 @@ packages:
       '@types/node': '*'
       cosmiconfig: '>=9'
       typescript: '>=5'
-
-  cosmiconfig@10.0.1:
-    resolution: {integrity: sha512-/zvGoYn0y27QTBmK+0B+oPdEPC4fKGUmJsMTQbDjqph00TrkqfVFW/M+C6ya54sYCgHC6QCwK/mI6djt8cEGHQ==}
-    engines: {node: ^22.18 || >= 24}
 
   cosmiconfig@9.0.2:
     resolution: {integrity: sha512-gtTZxTDau1wL7Y7zifc2dd8jHSK/k6BTx/2Xp/BpdlAdnlYWFVt7qhJqgwi7637yRwRQ3qL4ZidbB4I8tA5VOg==}
@@ -1953,10 +1889,6 @@ packages:
 
   js-yaml@4.3.2:
     resolution: {integrity: sha512-SFNOvSJ+Dgf/9An904Yx+CgSlIPCkIpao4qo51lpee25TIRejdH3rhR4EZMGoNx3/TP3O+wzWuiTFl4sqbltzA==}
-    hasBin: true
-
-  js-yaml@5.4.2:
-    resolution: {integrity: sha512-m+aqu+LwO1O6sIopafj8HUVl5aawITwZQe/yHpMCKjaWBaA/d07B/QdMb3529REftiU+RMMHL3Vlsw3hON7vWg==}
     hasBin: true
 
   jsdoc-type-pratt-parser@9.2.2:
@@ -2927,10 +2859,6 @@ packages:
     resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  validate-npm-package-name@8.0.0:
-    resolution: {integrity: sha512-SCv6OOV6Xj2/3cXy3dGmADluJTNcL3o7hZAglNPTe+WYuEuvxgJzxPrSDLZhF+CwyQOubqgecjMmTJGMVLWjYQ==}
-    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
-
   verkit@0.4.1:
     resolution: {integrity: sha512-mMVzj0TXExtVdlDEq+Mzp0eyOuyznNpFobNM3uAqe3HVm/Ps2c+u17BligMkZjZCA6EiXpoon8iRTer3iu40SQ==}
     engines: {node: '>=18.12.0'}
@@ -3352,36 +3280,6 @@ snapshots:
       '@eslint/json': 2.1.0
     transitivePeerDependencies:
       - supports-color
-
-  '@exadev/release-gate@1.0.1(supports-color@7.2.0)(typescript@6.0.3)':
-    dependencies:
-      env-ci: 11.2.0
-      semantic-release: 25.0.9(supports-color@7.2.0)(typescript@6.0.3)
-      semver: 7.8.5
-    transitivePeerDependencies:
-      - kerberos
-      - supports-color
-      - typescript
-
-  '@exadev/semantic-release-workspace@3.1.17(@semantic-release/changelog@7.0.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3)))(@semantic-release/commit-analyzer@13.0.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(@semantic-release/git@11.0.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(@semantic-release/github@12.0.10(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(@semantic-release/npm@13.2.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3)))(@semantic-release/release-notes-generator@14.1.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0))(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)(typescript@6.0.3)':
-    dependencies:
-      '@exadev/release-gate': 1.0.1(supports-color@7.2.0)(typescript@6.0.3)
-      '@semantic-release/changelog': 7.0.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))
-      '@semantic-release/commit-analyzer': 13.0.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)
-      '@semantic-release/git': 11.0.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)
-      '@semantic-release/github': 12.0.10(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)
-      '@semantic-release/npm': 13.2.0(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))
-      '@semantic-release/release-notes-generator': 14.1.1(semantic-release@25.0.9(supports-color@7.2.0)(typescript@6.0.3))(supports-color@7.2.0)
-      commander: 15.0.0
-      cosmiconfig: 10.0.1
-      semantic-release: 25.0.9(supports-color@7.2.0)(typescript@6.0.3)
-      tinyglobby: 0.2.17
-      validate-npm-package-name: 8.0.0
-      yaml: 2.9.1
-    transitivePeerDependencies:
-      - kerberos
-      - supports-color
-      - typescript
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -4181,8 +4079,6 @@ snapshots:
 
   commander@10.0.1: {}
 
-  commander@15.0.0: {}
-
   comment-parser@1.4.8: {}
 
   compare-func@2.0.0:
@@ -4251,11 +4147,6 @@ snapshots:
       cosmiconfig: 9.0.2(typescript@6.0.3)
       jiti: 2.6.1
       typescript: 6.0.3
-
-  cosmiconfig@10.0.1:
-    dependencies:
-      env-paths: 2.2.1
-      js-yaml: 5.4.2
 
   cosmiconfig@9.0.2(typescript@6.0.3):
     dependencies:
@@ -4768,10 +4659,6 @@ snapshots:
   js-tokens@4.0.0: {}
 
   js-yaml@4.3.2:
-    dependencies:
-      argparse: 2.0.1
-
-  js-yaml@5.4.2:
     dependencies:
       argparse: 2.0.1
 
@@ -5608,8 +5495,6 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  validate-npm-package-name@8.0.0: {}
-
   verkit@0.4.1: {}
 
   vite@8.3.1(@types/node@26.6.3)(jiti@2.7.0)(yaml@2.9.1):
@@ -5685,7 +5570,8 @@ snapshots:
 
   y18n@5.0.8: {}
 
-  yaml@2.9.1: {}
+  yaml@2.9.1:
+    optional: true
 
   yargs-parser@20.2.9: {}
 

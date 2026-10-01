@@ -1,6 +1,6 @@
 name: CI
 
-# One workflow for the whole workspace. Every check runs its task across the workspace through turbo from the repository root, rather than against a single package directory, so adding a package needs no edit here.
+# One workflow for the repository. Every check runs its task through turbo, so the pipeline in turbo.json stays the single definition of what each check does.
 
 on:
   push:
@@ -15,11 +15,6 @@ concurrency:
 
 permissions:
   contents: read
-
-env:
-  # On a pull request, restrict every turbo task to the packages the branch actually changed (and their dependents); on main, run the whole workspace so the caches the next run restores from are complete and the release gate covers everything. --affected compares against the base branch, so the checkouts below use fetch-depth: 0.
-  TURBO_FLAGS: ${{ github.event_name == 'pull_request' && '--affected' || '' }}
-  TURBO_SCM_BASE: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || '' }}
 
 jobs:
   commitlint:
@@ -54,7 +49,7 @@ jobs:
       - uses: ./.github/actions/setup-workspace
         with:
           task: lint
-          command: pnpm lint $TURBO_FLAGS
+          command: pnpm lint
 
   typecheck:
     name: Typecheck
@@ -68,7 +63,7 @@ jobs:
         with:
           task: typecheck
           # _typecheck:attw (attw --pack per published package, checking each package's declared types resolve under every module resolution mode) is one of the tasks `pnpm typecheck` runs through turbo, depending on that package's own _build, so no separate build step is needed to give it a dist/ to inspect.
-          command: pnpm typecheck $TURBO_FLAGS
+          command: pnpm typecheck
 
   test:
     name: Test
@@ -81,7 +76,7 @@ jobs:
       - uses: ./.github/actions/setup-workspace
         with:
           task: test
-          command: pnpm test $TURBO_FLAGS
+          command: pnpm test
 
   test-e2e:
     name: End-to-end test
@@ -103,8 +98,8 @@ jobs:
         with:
           task: e2e
           command: |
-            pnpm --dir packages/talktrack exec playwright install --with-deps chromium
-            pnpm test:e2e $TURBO_FLAGS
+            pnpm exec playwright install --with-deps chromium
+            pnpm test:e2e
 
   # Single stable branch-protection target aggregating every job that runs on every PR, so the required status check doesn't need updating whenever a job is added, renamed, or split.
   required-checks:
@@ -127,9 +122,9 @@ jobs:
     name: Release
     needs: [required-checks]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    # Two pushes to main close together must never run this job at the same time: the orchestrator pushes release commits and tags to main mid-run, and semantic-release's own stale-checkout guard refuses to publish the moment it sees a commit on main this checkout does not have. Queue the second run behind the first rather than cancelling either: cancelling mid-release would leave a published package with no committed version bump.
+    # Two pushes to main close together must never run this job at the same time: semantic-release pushes the release commit and tag to main mid-run, and semantic-release's own stale-checkout guard refuses to publish the moment it sees a commit on main this checkout does not have. Queue the second run behind the first rather than cancelling either: cancelling mid-release would leave a published package with no committed version bump.
     concurrency:
-      group: release-workspace
+      group: release
       cancel-in-progress: false
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -141,9 +136,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          # main's ruleset requires every change to land via a pull request, and the default GITHUB_TOKEN has no bypass for that: the orchestrator's release commit is a direct push to main, so it has to authenticate as an actor the ruleset explicitly allows through. This repository's write deploy key is that actor (a DeployKey bypass_actor on the ruleset), and giving checkout the key makes it configure an SSH remote that every later git push in this job uses. GITHUB_TOKEN stays in the release step below for the GitHub API calls, which a deploy key cannot make.
+          # main's ruleset requires every change to land via a pull request, and the default GITHUB_TOKEN has no bypass for that: semantic-release's release commit is a direct push to main, so it has to authenticate as an actor the ruleset explicitly allows through. This repository's write deploy key is that actor (a DeployKey bypass_actor on the ruleset), and giving checkout the key makes it configure an SSH remote that every later git push in this job uses. GITHUB_TOKEN stays in the release step below for the GitHub API calls, which a deploy key cannot make.
           ssh-key: ${{ secrets.RELEASE_DEPLOY_KEY }}
-          # ref: main, not the bare event SHA. The orchestrator pushes to the current branch by name, so a detached HEAD stops the run with a WorkspaceStateError rather than pushing HEAD:HEAD; naming the branch is what makes checkout attach HEAD to it. fetch-depth: 0 because each package's release range is analysed from its own last matching tag.
+          # ref: main, not the bare event SHA, so HEAD is attached to the branch and the checkout is the tip of main (semantic-release's own stale-checkout guard refuses to publish when main has a commit this checkout lacks). fetch-depth: 0 because the release range is analysed from the last matching tag.
           ref: main
           fetch-depth: 0
       - uses: pnpm/action-setup@v6
@@ -155,12 +150,12 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Upgrade npm for OIDC trusted publishing (needs npm CLI >=11.5.1)
         run: npm install -g npm@latest
-      - name: Release every package that changed, in dependency order
-        # The orchestrator discovers the workspace from pnpm-workspace.yaml, orders packages topologically, and runs semantic-release per package with commits path-filtered to that package's own directory and tags in `name@version` form. HUSKY=0 so local git hooks never fire against the automated commit.
+      - name: Release
+        # semantic-release analyses the commits since the last `talktrack@<version>` tag, publishes to npm, commits the version bump and changelog, tags, and creates the GitHub release. HUSKY=0 so local git hooks never fire against the automated commit.
         run: HUSKY=0 pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # npm publish provenance for every package the run publishes, matching each package.json's own publishConfig.provenance.
+          # npm publish provenance, matching package.json's own publishConfig.provenance.
           NPM_CONFIG_PROVENANCE: "true"
           # Blanked, not omitted: an inherited NPM_TOKEN/NODE_AUTH_TOKEN from a workflow-level env block, reusable workflow, or composite action would otherwise be used in preference to the OIDC exchange.
           NPM_TOKEN: ""
