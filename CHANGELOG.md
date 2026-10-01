@@ -1,3 +1,18 @@
+## [0.1.1](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.0...talktrack%400.1.1) (2026-10-01)
+
+### Code Refactoring
+
+* make the repository a single package ([edd067f](https://github.com/ExaDev/talktrack/commit/edd067f008b5ca3344aafe4391e42c7ebf7bb355))
+
+### Documentation
+
+* describe how the release job pushes to main ([83dd93f](https://github.com/ExaDev/talktrack/commit/83dd93f76e4e6b2f04c21ee1087e0bba6fb87923))
+
+### Continuous Integration
+
+* auto-merge minor and patch Dependabot updates ([a5b6b5b](https://github.com/ExaDev/talktrack/commit/a5b6b5be40c399e6a2cf382f7c326637133ac5e3))
+* push the release commit through a deploy key ([b3d8707](https://github.com/ExaDev/talktrack/commit/b3d8707db940be15162b0414eb057c575485ac02))
+
 ## [0.1.0](https://github.com/ExaDev/talktrack/compare/talktrack%400.0.0...talktrack%400.1.0) (2026-10-01)
 
 ### Features
