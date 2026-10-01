@@ -31,7 +31,7 @@ pnpm typecheck && pnpm lint && pnpm test && pnpm test:e2e
 
 ## Releasing
 
-Pushing to `main` runs the `release` job in `.github/workflows/ci.yml` after the required checks pass. It publishes to npm through trusted publishing (OIDC), so there is no npm token anywhere: the publisher is registered on npmjs.com for this repository and the `ci.yml` workflow. The first release continues from the `talktrack@0.0.0` tag, which marks the reservation stub the name was registered with.
+Pushing to `main` runs the `release` job in `.github/workflows/ci.yml` after the required checks pass. It publishes to npm through trusted publishing (OIDC), so there is no npm token anywhere: the publisher is registered on npmjs.com for this repository and the `ci.yml` workflow. The release commit and tags are pushed to `main` straight from the job, which the ruleset on `main` otherwise forbids, so the job checks out with the repository's write deploy key (secret `RELEASE_DEPLOY_KEY`), the one actor the ruleset lets bypass its pull-request requirement. The first release continues from the `talktrack@0.0.0` tag, which marks the reservation stub the name was registered with.
 
 ## Gotchas
 
