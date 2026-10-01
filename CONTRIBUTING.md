@@ -8,7 +8,7 @@ You need Node 22, pnpm, and `ffmpeg` plus `ffprobe` with the `libvpx-vp9` encode
 
 ```sh
 pnpm install
-pnpm exec --dir packages/talktrack playwright install chromium
+pnpm exec playwright install chromium
 ```
 
 ## Before you push

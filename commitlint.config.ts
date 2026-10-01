@@ -1,4 +1,4 @@
-import { commitTypes } from "./release-workspace.config";
+import { commitTypes } from "./release.config";
 
 export default {
   extends: ["@commitlint/config-conventional"],
