@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "extends": "./tsconfig.base.json",
+  // The workspace root's own tooling configs, which are Node programs rather than library source: ESLint's, Prettier's, commitlint's, lint-staged's, and the release orchestrator's. packages/talktrack keeps its own tsconfig and is not part of this program.
+  "include": ["*.config.ts"]
+}

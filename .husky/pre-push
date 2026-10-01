@@ -1,0 +1,4 @@
+# Run the same lint/typecheck/test matrix CI runs, via the turbo _prepush task: a no-op that exists purely to
+# depend on the real tasks (see turbo.json), so a push with nothing relevant changed since the last run is a
+# cache hit and effectively free, while a genuine change actually gets caught before it reaches CI.
+pnpm run prepush

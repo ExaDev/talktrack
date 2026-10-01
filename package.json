@@ -1,0 +1,53 @@
+{
+  "name": "talktrack-workspace",
+  "description": "Workspace root for talktrack. Never published: it exists to hold the workspace, the task pipeline, the shared tooling configuration, and the release orchestration.",
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "@eslint/js": "^10.0.1",
+    "@exadev/eslint-config": "2.27.0",
+    "@exadev/semantic-release-workspace": "3.1.17",
+    "@semantic-release/changelog": "^7.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.1",
+    "@semantic-release/git": "^11.0.1",
+    "@semantic-release/github": "^12.0.9",
+    "@semantic-release/npm": "^13.1.5",
+    "@semantic-release/release-notes-generator": "^14.1.1",
+    "@types/node": "^26.4.0",
+    "conventional-changelog-conventionalcommits": "^10.4.0",
+    "eslint": "^10.9.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "globals": "^17.11.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.4.1",
+    "prettier": "^3.9.6",
+    "semantic-release": "^25.0.9",
+    "turbo": "^2.10.12",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.68.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@12.4.1+sha512.2e81e399d73fe8390dab25e06aa788ab7a5908248d2f5a370f82b481147a6a7a367bf8048f9a6fdb6460f21a66f0542dedb8b94ca2c8723596741920b1656d4c",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExaDev/talktrack.git"
+  },
+  "scripts": {
+    "_lint": "eslint . --cache --max-warnings 0",
+    "_typecheck": "tsc -p tsconfig.json",
+    "build": "turbo run _build",
+    "lint": "turbo run _lint",
+    "prepare": "husky",
+    "prepush": "turbo run _prepush",
+    "release": "semantic-release-workspace release --config release-workspace.config.ts",
+    "test": "turbo run _test",
+    "test:e2e": "turbo run _test:e2e",
+    "typecheck": "turbo run _typecheck _typecheck:attw"
+  },
+  "type": "module"
+}
