@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>talktrack fixture</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        margin: 0;
+        color: #111827;
+      }
+      main {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      button {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+        margin-right: 0.5rem;
+      }
+      label {
+        display: block;
+        margin: 1.5rem 0;
+        font-size: 1.1rem;
+      }
+      input {
+        font-size: 1.1rem;
+        padding: 0.4rem;
+      }
+      .tall {
+        height: 1600px;
+        background: linear-gradient(#e0e7ff, #f8fafc);
+        padding-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>talktrack fixture</h1>
+      <p>A small page to drive a demo recording against.</p>
+      <button id="first" type="button">First action</button>
+      <button id="second" type="button">Second action</button>
+      <label>
+        Name
+        <input id="name" type="text" />
+      </label>
+      <p id="counter">0</p>
+      <div class="tall">
+        <h2 id="deep">Deep in the page</h2>
+      </div>
+    </main>
+    <script>
+      let clicks = 0;
+      document.getElementById("first").addEventListener("click", () => {
+        clicks += 1;
+        document.getElementById("counter").textContent = String(clicks);
+      });
+    </script>
+  </body>
+</html>
