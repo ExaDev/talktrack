@@ -1,0 +1,27 @@
+packages:
+  - "packages/*"
+
+# Sibling dependencies are declared as plain versions and this repo holds a single published package today, but the setting keeps a future sibling linked from the workspace rather than fetched from the registry whenever a declared range is satisfied locally.
+linkWorkspacePackages: true
+
+# Plain versions, never the workspace: protocol, for the same reason as every other house repo: npm publish copies the manifest verbatim and does not understand workspace:, so a workspace:^ range would reach the registry as-is and make the package uninstallable.
+saveWorkspaceProtocol: false
+
+# tsdown bundles through esbuild, whose install script fetches the platform binary; without this entry pnpm 11 refuses the install outright.
+allowBuilds:
+  esbuild: true
+
+# 60 minutes, matching the house repos: fresh enough to pick up fixes promptly, old enough to let a compromised-or-broken brand-new release get yanked before it reaches this workspace.
+minimumReleaseAge: 60
+
+# Bare package names (no @version), per pnpm's own documented syntax. Both are org-owned packages published only by their own semantic-release CI with npm OIDC trusted publishing, so a version-agnostic exemption is deliberate rather than an entry needing an edit on every release.
+minimumReleaseAgeExclude:
+  - "@exadev/eslint-config"
+  - "@exadev/semantic-release-workspace"
+
+overrides:
+  # release-workspace.config.ts's generateNotes step uses the conventionalcommits preset, whose templates call a helper that only conventional-changelog-writer@9 or newer provides. @semantic-release/release-notes-generator depends on conventional-changelog-writer@^8, so without this the preset loads and then throws from inside handlebars at render time. Scoped to release-notes-generator because it is the only consumer that renders with the writer at all.
+  "@semantic-release/release-notes-generator>conventional-changelog-writer": 9.2.1
+
+# Pin every future pnpm add to the resolved version instead of a caret range, matching the exact pins used for the @exadev tooling packages above.
+saveExact: true
