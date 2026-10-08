@@ -1,3 +1,9 @@
+## [0.1.2](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.1...talktrack%400.1.2) (2026-10-08)
+
+### Build System
+
+* **deps-dev:** bump turbo from 2.11.5 to 2.11.6 ([6bc2ea7](https://github.com/ExaDev/talktrack/commit/6bc2ea79a725f6dc613f7f024915f04f923bf631))
+
 ## [0.1.1](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.0...talktrack%400.1.1) (2026-10-01)
 
 ### Code Refactoring
