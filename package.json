@@ -1,7 +1,7 @@
 {
   "name": "talktrack",
   "description": "Narrated, cursor-driven demo recordings from Playwright: a synthetic human-feeling cursor, caption bands timed to real page events, and ffmpeg-framed output, usable inside @playwright/test specs or from standalone scripts.",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "bugs": {
     "url": "https://github.com/ExaDev/talktrack/issues"
   },

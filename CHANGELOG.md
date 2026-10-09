@@ -1,3 +1,9 @@
+## [0.1.5](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.4...talktrack%400.1.5) (2026-10-09)
+
+### Build System
+
+* **deps-dev:** bump @types/node from 26.6.3 to 26.6.4 ([523b148](https://github.com/ExaDev/talktrack/commit/523b148e91d9ec91bfeb0c660b976a8e655589f1))
+
 ## [0.1.4](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.3...talktrack%400.1.4) (2026-10-09)
 
 ### Build System
