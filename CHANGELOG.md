@@ -1,3 +1,9 @@
+## [0.1.4](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.3...talktrack%400.1.4) (2026-10-09)
+
+### Build System
+
+* **deps-dev:** bump publint from 0.3.24 to 0.3.25 ([60d8bec](https://github.com/ExaDev/talktrack/commit/60d8bec08c031a5f7b14dcc4858ad32b04eeff56))
+
 ## [0.1.3](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.2...talktrack%400.1.3) (2026-10-08)
 
 ### Build System
