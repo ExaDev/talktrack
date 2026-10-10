@@ -1,10 +1,11 @@
 import { exadevConfig } from "@exadev/eslint-config";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-export default exadevConfig(
-  {},
+export default defineConfig(
+  ...exadevConfig(),
   {
     ignores: [
       "node_modules",
@@ -40,4 +41,9 @@ export default exadevConfig(
     },
   },
   eslintPluginPrettierRecommended,
+  {
+    // src/cursor.ts: cursor glides, wheel scrolls, keystrokes and cursor re-application are paced input events whose whole point is that each one lands before the next starts, so running the iterations together would defeat them. src/frame.ts: the caption bands are rendered on one shared browser context and are rendered one after another to keep resource use bounded.
+    files: ["src/cursor.ts", "src/frame.ts"],
+    rules: { "no-await-in-loop": "off" },
+  },
 );
