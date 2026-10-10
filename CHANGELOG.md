@@ -1,3 +1,13 @@
+## [0.1.6](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.5...talktrack%400.1.6) (2026-10-10)
+
+### Styles
+
+* use block comments for multi-line comments ([6e4a904](https://github.com/ExaDev/talktrack/commit/6e4a904767e4518b06babb60ed1958fb7b0d497a))
+
+### Build System
+
+* **deps-dev:** bump @exadev/eslint-config to 3.0.0 ([c1cbe65](https://github.com/ExaDev/talktrack/commit/c1cbe65be137e1c9cb5ae41f20f934d5c017a403))
+
 ## [0.1.5](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.4...talktrack%400.1.5) (2026-10-09)
 
 ### Build System
