@@ -1,3 +1,10 @@
+## [0.1.10](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.9...talktrack%400.1.10) (2026-10-13)
+
+### Build System
+
+* **deps-dev:** bump conventional-changelog-conventionalcommits ([5b1fc20](https://github.com/ExaDev/talktrack/commit/5b1fc2076ea48e74626741357dfab28922c53383))
+* **deps-dev:** bump turbo from 2.11.6 to 2.11.7 ([a261155](https://github.com/ExaDev/talktrack/commit/a261155a6d0cdedcefa926322047d47623e2dc4f))
+
 ## [0.1.9](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.8...talktrack%400.1.9) (2026-10-13)
 
 ### Build System
