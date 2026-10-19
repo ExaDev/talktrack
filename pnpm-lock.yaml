@@ -182,8 +182,8 @@ importers:
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))
       '@exadev/eslint-config':
-        specifier: 3.0.0
-        version: 3.0.0(@eslint/json@2.1.0)(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(typescript@6.0.3)
+        specifier: 3.1.0
+        version: 3.1.0(@eslint/json@2.1.0)(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(typescript@6.0.3)
       '@playwright/test':
         specifier: ^1.63.0
         version: 1.64.0
@@ -437,8 +437,8 @@ packages:
     resolution: {integrity: sha512-IkO+/KEUvwbVpiURZg+P7zF74z5Jxe0UgJxVni+RtoHQ6IZieXaO02kmadomap/q+l6bc/jdPGGqTjhuZnuz1Q==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@exadev/eslint-config@3.0.0':
-    resolution: {integrity: sha512-nvyOjjM1sGKjQo6buZt69vJ5ND0CuE/lxoDvR2oRgv74qj4gJBZr10d6Y/QeTd6LQIPDkPPnH78YYfX/HSzNJA==}
+  '@exadev/eslint-config@3.1.0':
+    resolution: {integrity: sha512-LAIWx1zWEyirHxyHzYSX8JSLCp8qafz6id1g3+7QP4vO87KK1jAr0peOaGOQutrG1Lo+7QSCx6dWRMuo7f7J3g==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
     peerDependencies:
       '@eslint/json': ^2.1.0
@@ -3193,7 +3193,7 @@ snapshots:
   '@es-joy/jsdoccomment@0.97.0':
     dependencies:
       '@types/estree': 1.0.9
-      '@typescript-eslint/types': 8.71.0
+      '@typescript-eslint/types': 8.71.1
       comment-parser: 1.4.8
       esquery: 1.7.0
       jsdoc-type-pratt-parser: 9.2.2
@@ -3241,7 +3241,7 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
-  '@exadev/eslint-config@3.0.0(@eslint/json@2.1.0)(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(typescript@6.0.3)':
+  '@exadev/eslint-config@3.1.0(@eslint/json@2.1.0)(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript-eslint@8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3))(typescript@6.0.3)':
     dependencies:
       '@eslint/js': 10.0.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))
       '@microsoft/tsdoc': 0.17.1
@@ -3567,8 +3567,8 @@ snapshots:
   '@stylistic/eslint-plugin@6.0.0-beta.6(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))':
     dependencies:
       '@eslint-community/eslint-utils': 4.10.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))
-      '@typescript-eslint/types': 8.71.0
-      '@typescript-eslint/visitor-keys': 8.71.0
+      '@typescript-eslint/types': 8.71.1
+      '@typescript-eslint/visitor-keys': 8.71.1
       espree: 11.2.0
       picomatch: 4.0.7
     optionalDependencies:
@@ -3641,8 +3641,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(supports-color@7.2.0)(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.71.0(typescript@6.0.3)
-      '@typescript-eslint/types': 8.71.0
+      '@typescript-eslint/tsconfig-utils': 8.71.1(typescript@6.0.3)
+      '@typescript-eslint/types': 8.71.1
       debug: 4.4.3(supports-color@7.2.0)
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -3650,8 +3650,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.71.0(supports-color@7.2.0)(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.71.0(typescript@6.0.3)
-      '@typescript-eslint/types': 8.71.0
+      '@typescript-eslint/tsconfig-utils': 8.71.1(typescript@6.0.3)
+      '@typescript-eslint/types': 8.71.1
       debug: 4.4.3(supports-color@7.2.0)
       typescript: 6.0.3
     transitivePeerDependencies:
@@ -4195,7 +4195,7 @@ snapshots:
     dependencies:
       '@es-joy/jsdoccomment': 0.97.0
       '@es-joy/resolve.exports': 1.2.0
-      '@typescript-eslint/utils': 8.71.0(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
+      '@typescript-eslint/utils': 8.71.1(eslint@10.12.0(jiti@2.7.0)(supports-color@7.2.0))(supports-color@7.2.0)(typescript@6.0.3)
       are-docs-informative: 0.1.1
       comment-parser: 1.4.8
       debug: 4.4.3(supports-color@7.2.0)
