@@ -1,3 +1,9 @@
+## [0.1.15](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.14...talktrack%400.1.15) (2026-10-19)
+
+### Build System
+
+* **deps-dev:** bump @exadev/eslint-config from 3.0.0 to 3.1.0 ([696c571](https://github.com/ExaDev/talktrack/commit/696c571a304f390851166a07823d993609e8f156))
+
 ## [0.1.14](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.13...talktrack%400.1.14) (2026-10-19)
 
 ### Build System
