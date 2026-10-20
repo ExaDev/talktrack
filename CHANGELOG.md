@@ -1,3 +1,9 @@
+## [0.1.17](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.16...talktrack%400.1.17) (2026-10-20)
+
+### Build System
+
+* **deps-dev:** bump eslint-plugin-prettier from 5.5.6 to 5.5.7 ([00ac437](https://github.com/ExaDev/talktrack/commit/00ac437f337fcfde4db2ef2179340c35c12d7fba))
+
 ## [0.1.16](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.15...talktrack%400.1.16) (2026-10-19)
 
 ### Build System
