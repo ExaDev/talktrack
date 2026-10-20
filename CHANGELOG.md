@@ -1,3 +1,9 @@
+## [0.1.18](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.17...talktrack%400.1.18) (2026-10-20)
+
+### Build System
+
+* **deps-dev:** bump typescript-eslint from 8.71.1 to 8.71.2 ([e80ecc8](https://github.com/ExaDev/talktrack/commit/e80ecc8d9e298753ccc49071b65599c9286e9fe0))
+
 ## [0.1.17](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.16...talktrack%400.1.17) (2026-10-20)
 
 ### Build System
