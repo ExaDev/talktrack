@@ -1,3 +1,9 @@
+## [0.1.22](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.21...talktrack%400.1.22) (2026-10-26)
+
+### Build System
+
+* **deps-dev:** bump @commitlint/cli from 21.2.3 to 21.2.4 ([8c3ca1e](https://github.com/ExaDev/talktrack/commit/8c3ca1edba75063956e51a4a185cf86e0bdbc3e7))
+
 ## [0.1.21](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.20...talktrack%400.1.21) (2026-10-22)
 
 ### Build System
