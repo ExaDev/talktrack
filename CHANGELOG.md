@@ -1,3 +1,9 @@
+## [0.1.23](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.22...talktrack%400.1.23) (2026-10-26)
+
+### Build System
+
+* **deps-dev:** bump @commitlint/config-conventional ([fbde99e](https://github.com/ExaDev/talktrack/commit/fbde99e4bdee8cf08383fba0efeadd43bd880d64))
+
 ## [0.1.22](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.21...talktrack%400.1.22) (2026-10-26)
 
 ### Build System
