@@ -1,3 +1,10 @@
+## [0.1.25](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.24...talktrack%400.1.25) (2026-10-28)
+
+### Build System
+
+* **deps-dev:** bump eslint from 10.12.0 to 10.13.0 ([61fda76](https://github.com/ExaDev/talktrack/commit/61fda7685b8b081c22a18b0b7c2f44494f4adc4d))
+* **deps-dev:** bump turbo from 2.11.9 to 2.11.10 ([5947dc0](https://github.com/ExaDev/talktrack/commit/5947dc0df7d670ad350d4b998a5e0f603f469b5f))
+
 ## [0.1.24](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.23...talktrack%400.1.24) (2026-10-26)
 
 ### Build System
