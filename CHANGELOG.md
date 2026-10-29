@@ -1,3 +1,9 @@
+## [0.1.26](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.25...talktrack%400.1.26) (2026-10-29)
+
+### Documentation
+
+* add the standard badge row to the README ([32e8f94](https://github.com/ExaDev/talktrack/commit/32e8f94289e033f5cc8c4067acf9e3f089c88b52))
+
 ## [0.1.25](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.24...talktrack%400.1.25) (2026-10-28)
 
 ### Build System
