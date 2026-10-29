@@ -1,5 +1,7 @@
 # talktrack
 
+[![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)](https://github.com/ExaDev/talktrack) [![npm](https://img.shields.io/badge/npm-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/package/talktrack) [![Release](https://img.shields.io/github/v/release/ExaDev/talktrack)](https://github.com/ExaDev/talktrack/releases/latest) [![CI](https://img.shields.io/github/actions/workflow/status/ExaDev/talktrack/ci.yml?branch=main)](https://github.com/ExaDev/talktrack/actions)
+
 Narrated, cursor-driven demo recordings from Playwright. Playwright drives the page, talktrack makes the recording read like a person at the keyboard with someone talking over their shoulder: a visible cursor that glides, clicks and types at human speed, caption text timed to what was actually happening on screen, and a framed result with a header band above the app and the narration below it.
 
 It works inside `@playwright/test` specs and from plain Node scripts, with the same helpers in both.
