@@ -1,3 +1,9 @@
+## [0.1.28](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.27...talktrack%400.1.28) (2026-11-04)
+
+### Build System
+
+* **deps-dev:** bump tsdown from 0.23.2 to 0.23.3 ([a27005c](https://github.com/ExaDev/talktrack/commit/a27005cabca696fcfe1ae0cdf16c82b1107edfdc))
+
 ## [0.1.27](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.26...talktrack%400.1.27) (2026-10-30)
 
 ### Build System
