@@ -1,3 +1,9 @@
+## [0.1.32](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.31...talktrack%400.1.32) (2026-11-09)
+
+### Build System
+
+* **deps-dev:** bump globals from 17.13.0 to 17.14.0 ([d577716](https://github.com/ExaDev/talktrack/commit/d57771636ad57085894d6b8e7c79aa10ff23c354))
+
 ## [0.1.31](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.30...talktrack%400.1.31) (2026-11-06)
 
 ### Build System
