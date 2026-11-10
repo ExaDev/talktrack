@@ -1,3 +1,9 @@
+## [0.1.33](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.32...talktrack%400.1.33) (2026-11-10)
+
+### Build System
+
+* **deps-dev:** bump vitest from 5.0.5 to 5.1.0 ([18582bb](https://github.com/ExaDev/talktrack/commit/18582bb3c3dc99ba47d91c285a4b5910c229726e))
+
 ## [0.1.32](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.31...talktrack%400.1.32) (2026-11-09)
 
 ### Build System
