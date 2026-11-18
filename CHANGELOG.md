@@ -1,3 +1,9 @@
+## [0.1.36](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.35...talktrack%400.1.36) (2026-11-18)
+
+### Build System
+
+* **deps-dev:** bump prettier from 3.9.10 to 3.10.0 ([bb45c8d](https://github.com/ExaDev/talktrack/commit/bb45c8daabba5f7e7679a5509573a464a0e34b88))
+
 ## [0.1.35](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.34...talktrack%400.1.35) (2026-11-13)
 
 ### Build System
