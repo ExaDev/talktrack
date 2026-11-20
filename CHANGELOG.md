@@ -1,3 +1,9 @@
+## [0.1.39](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.38...talktrack%400.1.39) (2026-11-20)
+
+### Build System
+
+* **deps-dev:** bump @semantic-release/github from 12.0.10 to 12.0.11 ([d95bdf0](https://github.com/ExaDev/talktrack/commit/d95bdf0d4bc29eefff2a8d6fadc63406cad5e6b6))
+
 ## [0.1.38](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.37...talktrack%400.1.38) (2026-11-19)
 
 ### Build System
