@@ -1,3 +1,9 @@
+## [0.1.40](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.39...talktrack%400.1.40) (2026-11-23)
+
+### Build System
+
+* **deps-dev:** bump @playwright/test from 1.65.0 to 1.65.1 ([52f79b7](https://github.com/ExaDev/talktrack/commit/52f79b7da0d0ac289acfdc26d0102641b8d0e7f2))
+
 ## [0.1.39](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.38...talktrack%400.1.39) (2026-11-20)
 
 ### Build System
