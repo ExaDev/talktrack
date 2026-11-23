@@ -1,3 +1,9 @@
+## [0.1.42](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.41...talktrack%400.1.42) (2026-11-23)
+
+### Build System
+
+* **deps-dev:** bump lint-staged from 17.6.0 to 17.6.1 ([335a288](https://github.com/ExaDev/talktrack/commit/335a2886a1f38062d62af9be71bb1d121850460b))
+
 ## [0.1.41](https://github.com/ExaDev/talktrack/compare/talktrack%400.1.40...talktrack%400.1.41) (2026-11-23)
 
 ### Build System
